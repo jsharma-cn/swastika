@@ -1,4 +1,4 @@
-package com.mongodb.training.MongoDBTraining;
+package edu.jsharma.training.springdatamongodb.curd;
 
 import java.util.List;
 
