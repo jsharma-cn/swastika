@@ -9,12 +9,11 @@ from pyspark.sql import SparkSession
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: wordcount <file>", file=sys.stderr)
-        exit(-1)
+        sys.exit(-1)
 
     spark = SparkSession\
         .builder\
-        .appName("PythonWordCount")\
-        .config("spark.driver.bindAddress","127.0.0.1")\
+        .appName("WordCount")\
         .getOrCreate()
 
     lines = spark.read.text(sys.argv[1]).rdd.map(lambda r: r[0])
